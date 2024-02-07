@@ -37,6 +37,7 @@ public class Similarity {
         for (int index = 0; index < setList.size(); index++) {  //iterate through the sets in input list
             Map<Integer, Double> subMap = new HashMap<Integer, Double>();
             Set<E> set = setList.get(index);
+            '''
             for (E elem : set) {
                 ArrayList<Integer> arrayOfSets = Z.get(elem);
                 for (int arrayIndex : arrayOfSets) {         //compare the similarity between sets. Build jaccard variable values based on comparisons. 
@@ -58,7 +59,7 @@ public class Similarity {
                     }
                 }
             }
-
+'''
             if (subMap.size() > 0) {  //only add to HashMap if a set has similarity with any others
                 R.put(index, subMap);
             }
